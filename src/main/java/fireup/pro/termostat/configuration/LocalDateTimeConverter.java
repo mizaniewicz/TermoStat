@@ -1,4 +1,4 @@
-package fireup.pro.termostat.Configuration;
+package fireup.pro.termostat.configuration;
 
 import javax.persistence.AttributeConverter;
 import javax.persistence.Converter;

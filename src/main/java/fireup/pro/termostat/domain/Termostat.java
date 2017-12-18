@@ -1,6 +1,6 @@
 package fireup.pro.termostat.domain;
 
-import fireup.pro.termostat.Configuration.LocalDateTimeConverter;
+import fireup.pro.termostat.configuration.LocalDateTimeConverter;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
