@@ -22,10 +22,8 @@ public class Termostat {
     @Id
     @GeneratedValue
     private Long id;
-
-    private double temperature;
+    private final double temperature;
 
     @Convert(converter = LocalDateTimeConverter.class)
-    private LocalDateTime timestamp = LocalDateTime.now();
-
+    private final LocalDateTime timestamp;
 }
