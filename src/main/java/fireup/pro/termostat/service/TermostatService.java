@@ -15,6 +15,7 @@ import java.util.List;
 @Service
 @Slf4j
 public class TermostatService {
+
     private TermostatRepository repository;
     private TemperatureProvider provider;
 
@@ -30,10 +31,6 @@ public class TermostatService {
 
     public Termostat getTemperatureById(Long id) {
         return repository.findById(id);
-    }
-
-    public Termostat getTemperatureByDate(LocalDateTime date) {
-        return repository.findByTimestamp(date);
     }
 
     public List<Termostat> getTEmeraturesBetweenDates(LocalDateTime startDate, LocalDateTime endDate) {
