@@ -10,6 +10,7 @@ import java.util.List;
 
 @Service
 public class TermostatService {
+
     private TermostatRepository repository;
 
     @Autowired
@@ -25,11 +26,8 @@ public class TermostatService {
         return repository.findById(id);
     }
 
-    public Termostat getTemperatureByDate(LocalDateTime date) {
-        return repository.findByTimestamp(date);
-    }
-
     public List<Termostat> getTEmeraturesBetweenDates(LocalDateTime startDate, LocalDateTime endDate) {
         return repository.findAllByTimestampBetween(startDate, endDate);
     }
+
 }

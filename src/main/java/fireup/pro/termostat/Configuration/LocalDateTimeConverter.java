@@ -8,6 +8,7 @@ import java.util.Optional;
 
 @Converter(autoApply = true)
 public class LocalDateTimeConverter implements AttributeConverter<LocalDateTime, Timestamp> {
+
     @Override
     public Timestamp convertToDatabaseColumn(LocalDateTime attribute) {
         return Optional.ofNullable(attribute)
@@ -21,4 +22,5 @@ public class LocalDateTimeConverter implements AttributeConverter<LocalDateTime,
                 .map(Timestamp::toLocalDateTime)
                 .orElse(null);
     }
+
 }

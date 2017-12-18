@@ -9,10 +9,11 @@ import java.util.List;
 
 @Repository
 public interface TermostatRepository extends CrudRepository<Termostat, Long> {
+
     @Override
     List<Termostat> findAll();
-
     Termostat findById(Long id);
     Termostat findByTimestamp(LocalDateTime date);
     List<Termostat> findAllByTimestampBetween(LocalDateTime startDate, LocalDateTime endDate);
+
 }

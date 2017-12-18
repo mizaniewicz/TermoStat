@@ -18,11 +18,14 @@ import java.time.LocalDateTime;
 @EqualsAndHashCode
 @Entity
 public class Termostat {
+
     @Id
     @GeneratedValue
     private Long id;
+
     private double temperature;
 
     @Convert(converter = LocalDateTimeConverter.class)
     private LocalDateTime timestamp = LocalDateTime.now();
+
 }
