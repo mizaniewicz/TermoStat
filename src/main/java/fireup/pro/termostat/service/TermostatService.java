@@ -5,6 +5,7 @@ import fireup.pro.termostat.repository.TermostatRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -24,7 +25,11 @@ public class TermostatService {
         return repository.findById(id);
     }
 
-    public Termostat getTemperatureByDate(String date) {
+    public Termostat getTemperatureByDate(LocalDateTime date) {
         return repository.findByTimestamp(date);
+    }
+
+    public List<Termostat> getTEmeraturesBetweenDates(LocalDateTime startDate, LocalDateTime endDate) {
+        return repository.findAllByTimestampBetween(startDate, endDate);
     }
 }

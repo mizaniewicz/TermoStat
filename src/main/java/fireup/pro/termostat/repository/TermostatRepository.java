@@ -4,6 +4,7 @@ import fireup.pro.termostat.domain.Termostat;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Repository
@@ -12,6 +13,6 @@ public interface TermostatRepository extends CrudRepository<Termostat, Long> {
     List<Termostat> findAll();
 
     Termostat findById(Long id);
-    Termostat findByTimestamp(String date);
-    List<Termostat> findAllByTimestampBetween(String startDate, String endDate);
+    Termostat findByTimestamp(LocalDateTime date);
+    List<Termostat> findAllByTimestampBetween(LocalDateTime startDate, LocalDateTime endDate);
 }
