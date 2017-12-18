@@ -15,5 +15,6 @@ public interface TermostatRepository extends CrudRepository<Termostat, Long> {
     Termostat findById(Long id);
     Termostat findByTimestamp(LocalDateTime date);
     List<Termostat> findAllByTimestampBetween(LocalDateTime startDate, LocalDateTime endDate);
+    Termostat findFirstByOrderByTimestampDesc();
 
 }

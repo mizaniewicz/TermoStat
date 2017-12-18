@@ -37,6 +37,10 @@ public class TermostatService {
         return repository.findAllByTimestampBetween(startDate, endDate);
     }
 
+    public Termostat getLastTemerature() {
+        return repository.findFirstByOrderByTimestampDesc();
+    }
+
     @Scheduled(fixedDelayString = "${termostat.sampleDelay}")
     public void readTemperatureSample() {
         TemperatureSample sample = provider.sample();

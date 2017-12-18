@@ -2,6 +2,7 @@ package fireup.pro.termostat.controller;
 
 import fireup.pro.termostat.domain.Termostat;
 import fireup.pro.termostat.service.TermostatService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,6 +15,7 @@ import java.util.List;
 public class TermostatController {
     TermostatService termostatService;
 
+    @Autowired
     public TermostatController(TermostatService termostatService) {
         this.termostatService = termostatService;
     }
@@ -21,6 +23,11 @@ public class TermostatController {
     @GetMapping("/temperature/{id}")
     public Termostat showTemperature(@PathVariable("id") Long id) {
         return termostatService.getTemperatureById(id);
+    }
+
+    @GetMapping("/temperature/last")
+    public Termostat showLastTemperature() {
+        return termostatService.getLastTemerature();
     }
 
     @GetMapping("/temperatures/{startdate}/{enddate}")

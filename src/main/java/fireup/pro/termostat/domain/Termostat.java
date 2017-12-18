@@ -26,4 +26,8 @@ public class Termostat {
 
     @Convert(converter = LocalDateTimeConverter.class)
     private final LocalDateTime timestamp;
+
+    public Termostat() {
+        this(0, null);
+    }
 }
